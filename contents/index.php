@@ -12,6 +12,7 @@
         <link href="public/css/register.css" rel="stylesheet" type="text/css">
         <link href="public/css/login.css" rel="stylesheet" type="text/css">
         <link href="public/css/buttom.css" rel="stylesheet" type="text/css">
+        <link href="public/css/validation.css" rel="stylesheet" type="text/css">
 
         <title>GER'S Auto Service & Repair - <?php echo $page_title; ?></title>
     </head>
@@ -26,10 +27,21 @@
                     <ul id="nav-bar">
                         <li><a href="?pag=main#services">Services</a></li>
                         <li><a href="?pag=main#about">About</a></li>
-                        <li><a href="?pag=main#contact">Contact</a></li>                   
+                        <li><a href="?pag=main#contact">Contact</a></li>
+
+                        <?php
+                            if (isset($_SESSION['login'])) {
+                        ?>
+                        <li><a class="logout" href="functions/php/func_logout.php">Logout</a></li>
+                        <li><a class="user" href="?pag=user_area"><?php echo $_SESSION['login']['name']['0'] ?></a></li>
+                        <?php
+                            } else {
+                        ?>
                         <li><a class="login" href="?pag=login">Login</a></li>
                         <li><a href="?pag=register">Register</a></li>
-                       
+                        <?php
+                            }
+                        ?>
                     </ul>
                 </nav>
             </section>
