@@ -1,0 +1,25 @@
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 88px); 
+}
+
+#login > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#login form div:last-child {
+    text-align: center;
+}
+
+#login h2 {
+    margin: 0 0 64px;
+    text-align: center;
+    color: #0EC281;
+}
+
+#login form {
+    width: 288px;
+}

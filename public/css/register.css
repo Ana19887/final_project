@@ -1,0 +1,22 @@
+#register {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 96px 0;
+    min-height: calc(100vh - 88px); 
+}
+
+#register > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#register h2 {
+    margin: 0 0 64px;
+    text-align: center;
+    color: #0EC281;
+}
+
+#register form {
+    width: 384px;
+}

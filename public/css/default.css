@@ -1,0 +1,94 @@
+body {
+    background: #292929;
+    position: relative;
+    font-family: 'Archivo', sans-serif;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+main {
+    background: #292929;
+    position: relative;
+    margin-bottom: 80px;
+    z-index: 1;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+}
+
+section {
+    position: relative;
+    margin: auto;
+    padding: 0 16px;
+    max-width: 1280px;
+}
+
+h1, h2 {
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 112px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    color: #0EC281;
+}
+
+p {
+    line-height: 22px;
+}
+
+section#services,
+section#about,
+section#contact {
+    display: flex;
+    padding: 160px 16px;
+}
+
+section#services > div:first-child,
+section#about > div:first-child,
+section#contact > div:first-child {
+    padding-right: 24px;
+    width: 25%;
+}
+
+section#services > div:last-child,
+section#about > div:last-child,
+section#contact > div:last-child {
+    width: 75%;
+}
+
+section#services::before,
+section#about::before,
+section#contact::before {
+    background: rgba(255, 255, 255, 0.2);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1.6px;
+}
+
+section#services h2,
+section#about h2,
+section#contact h2 {
+    margin: 0 0 24px;
+    font-size: 28px;
+    padding: 40px 0 5px 0;
+    border-bottom: 5px solid #0EC281;
+}
+
+.nav-logo {
+    display: flex;
+}

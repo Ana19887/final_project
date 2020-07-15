@@ -1,0 +1,74 @@
+/* HEADER */
+
+#header {
+    padding: 24px 16px;
+}
+
+#header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* LOGO */
+#header .logo {
+    height: 40px;
+}
+
+/* NAV-BAR */
+#nav-bar {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    list-style: none;
+}
+
+#nav-bar li {
+    padding: 0 8px;
+}
+
+
+#nav-bar li:nth-last-child(2) { /* separating login and register*/
+    padding-left: 16px;
+    border-left: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+#nav-bar a {
+    transition: border linear 0.4s, color linear 0.2s;
+    padding: 5px 0;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    border-bottom: 5px solid rgba(255, 255, 255, 0);
+}
+
+#nav-bar a:hover {
+    color: #ffffff;
+}
+
+#nav-bar a:hover {
+    border-bottom: 5px solid #0EC281;
+}
+
+#nav-bar li:last-child a {
+    transition: background ease-in 0.2s;
+    background: #0EC281;
+    padding: 11px 27px;
+    font-weight: 700;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25);
+}
+
+#nav-bar li:last-child a:hover {
+    background: #22E09C;
+}
+
+#nav-bar li:nth-last-child(2) a.login {
+    transition: color ease-in 0.2s;
+    border: none;
+}
+    #nav-bar li:nth-last-child(2) a.login:hover {
+        color: #0EC281;
+        border: none;
+    }

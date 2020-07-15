@@ -1,0 +1,212 @@
+/* MAIN */
+
+
+/* PRESENTATION */
+
+#presentation {
+    display: flex;
+    align-items: center;
+    height: 500px; /* #header .logo(height) + #header(padding) */
+}
+
+#presentation div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 32px;
+    width: 40%;
+}
+
+#presentation div:last-child {
+    width: 60%;
+}
+
+#presentation div:first-child > span {
+    display: block;
+    margin-top: 50px;
+    padding: 5px 0;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    
+}
+
+#presentation video {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    opacity: 0.7;
+}
+
+#presentation h1 {
+    margin: 0;
+    line-height: 56px;
+}
+
+#presentation h1 span {
+    display: block;
+    font-size: 19px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#presentation h1 span:last-child {
+    padding-right: 144px;
+    text-align: right;
+}
+
+
+/* SERVICES */
+
+#services .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#services .card {
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 32px;
+    width: 48.3%;
+    border-radius: 8px 8px 8px 8px;
+}
+
+#services .card:nth-child(odd) {
+    margin-right: 32px;
+}
+
+#services .container-photo {
+    height: 150px;
+}
+
+#services .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+#services .container {
+    padding: 0 35px 35px;
+}
+
+#services .container-description {
+    height: 256px;
+}
+
+#services .list {
+    columns: 2;
+    column-gap: 48px;
+}
+
+#services .list li {
+    margin-bottom: 8px;
+    color: #0EC281;
+}
+
+#services .list span {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#services h3 {
+    margin: 48px auto;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 4.8px;
+}
+
+#services .container-price {
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    color: #ffffff;
+}
+
+#services .container-price span {
+    display: block;
+}
+
+#services .price {
+    color: #0EC281;
+    font-size: 48px;
+}
+
+
+/* ABOUT */
+
+#about > div:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#about .container {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 6rem;
+    max-width: 43rem;
+    border-radius: 1rem;
+}
+
+#about .logo {
+    display: block;
+    margin: 0 auto 32px;
+    width: 112px;
+}
+
+#about .container-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+#about .container-social a:not(:last-child) {
+    margin-right: 16px;
+}
+
+#about .container-social img {
+    transition: opacity ease 1s;
+    width: 40px;
+    opacity: 0.4;
+}
+
+#about .container-social img:hover {
+    opacity: 1;
+}
+
+
+/* CONTACT */
+#contact > div:first-child span {
+    display: block;
+    margin-bottom: 16px;
+}
+
+#contact > div:last-child {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#contact form {
+    max-width: 800px;
+}
+
+#contact form > div {
+    display: flex;
+}
+
+#contact form > div > div {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#contact form > div > div:not(:last-child) {
+    margin-right: 16px;
+}
+
+#contact textarea {
+    height: 200px;
+}
+
+#contact .button {
+    margin-top: 16px;
+}
