@@ -13,7 +13,7 @@
         $pass     = $_POST['password'];
         $level    = '1'; //setting level for the custumers=1
 
-        //creating a password hash using the algorithm PASSWORD_BCRYPT beforesaving in the database
+        //creating a password hash using the algorithm PASSWORD_BCRYPT before saving in the database
         $pass = password_hash($pass, PASSWORD_BCRYPT);
 
         //sql query

@@ -1,0 +1,48 @@
+#new_service {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 6rem 0;
+    min-height: calc(100vh - 5.5rem); 
+}
+
+#new_service > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#new_service h2 {
+    margin: 0 0 4rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: #0EC281;
+}
+    #new_service h2 span {
+        display: block;
+        font-size: 1rem;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+#new_service form {
+    width: 24rem;
+}
+
+#new_service .container.radios {
+    margin-bottom: 1rem;
+    border-bottom: 0.1rem solid rgba(255, 255, 255, 0.2);
+}
+
+#new_service .container.radios .item {
+    display: flex;
+    align-items: center;
+}
+
+#new_service input[type=radio] {
+    margin-bottom: 0.5rem;
+}
+
+#new_service textarea {
+    height: 9rem;
+}

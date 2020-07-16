@@ -10,7 +10,8 @@
     if (isset($_GET)) {
         if ( isset($_GET['pag']) ) {
             $allowed_pages = array(
-                'main', 'login', 'register'
+                'main', 'login', 'register', 'user_area', 'new_vehicle', 'new_service'
+            
             );
 
             $pag = $_GET['pag'];
