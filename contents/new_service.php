@@ -11,15 +11,14 @@
 
         <?php include('validation.php'); ?>
 
-        <form action="functions/php/post/func_new_service.php" method="POST">
+        <form action="functions/php/func_new_service.php" method="POST">
             <div class="item">
                 <label for="vehicle">Vehicle</label>
                 <select id="vehicle" name="vehicle" required>
                     <option value="">Choose</option>
 
                     <?php
-                        $sql   = "SELECT *
-                        FROM `vehicles`
+                        $sql   = "SELECT * FROM `vehicles`
                         
                         INNER JOIN `vehicle_model`
                         ON `vehicles`.`veh_model` = `vehicle_model`.`vmd_id`
@@ -32,7 +31,7 @@
 
                         while ( $ln = mysqli_fetch_assoc($query) ) {
                     ?>
-                    
+                    <!-- shows the model and brand of the registered vehicles by the user -->
                     <option value="<?php echo $ln['veh_id']; ?>"><?php echo $ln['vbd_name'].' - '.$ln['vmd_name']; ?></option>
                     
                     <?php
@@ -51,9 +50,10 @@
                     $query = mysqli_query($conn, $sql);
 
                     while ( $ln = mysqli_fetch_assoc($query) ) {
-                        $service_type = mb_strtolower($ln['srv_name']);
+                        //$service_type = mb_strtolower($ln['srv_name']);
                 ?>
 
+                 <!-- shows the services to be choosen by the user -->
                 <div class="item">
                     <input id="<?php echo $service_type; ?>" type="radio" value="<?php echo $ln['srv_id']; ?>" name="service" required>
                     <label for="<?php echo $service_type; ?>"><?php echo $ln['srv_name']; ?></label>
@@ -65,13 +65,15 @@
                 ?>
             </div>
 
+            <!-- select a date for the service-->
             <div class="item">
                 <label for="date">Choose a date</label>
                 <input id="date" type="text" name="date" readonly required>
             </div>
 
             <div class="item">
-                
+             
+            
             <label for="commentary">Commentary</label>
                 <textarea id="commentary" name="commentary"></textarea>
             </div>

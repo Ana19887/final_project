@@ -16,6 +16,7 @@
         <link href="public/css/user_area.css" rel="stylesheet" type="text/css">
         <link href="public/css/new_service.css" rel="stylesheet" type="text/css">
 
+        
         <title>GER'S Auto Service & Repair - <?php echo $page_title; ?></title>
     </head>
 
@@ -31,6 +32,7 @@
                         <li><a href="?pag=main#about">About</a></li>
                         <li><a href="?pag=main#contact">Contact</a></li>
 
+                        <!-- if the user is loggedin-->
                         <?php
                             if (isset($_SESSION['login'])) {
                         ?>
@@ -39,6 +41,7 @@
                         <?php
                             } else {
                         ?>
+                    
                         <li><a class="login" href="?pag=login">Login</a></li>
                         <li><a href="?pag=register">Register</a></li>
                         <?php
@@ -67,5 +70,23 @@
             </section>
         </footer>
 
-        </body>
-</html>  
+        <script src="public/js/libraries/jquery-3.5.1.min.js"></script>
+
+        <!-- AIR DATEPICKER DEPENDENCES-->
+        <link href="public/js/plugins/air_datepicker/datepicker.css" rel="stylesheet" type="text/css">
+        <script src="public/js/plugins/air_datepicker/datepicker.js"></script>
+        <!-- English language -->
+        <script src="public/js/plugins/air_datepicker/datepicker.en.js"></script>
+
+        <!-- JQUERY MASK PLUGIN DEPENDENCES-->
+        <script src="public/js/plugins/jquery_mask_plugin/jquery.mask.min.js"></script>
+        
+        <!-- FUNCTIONS -->
+        <!-- Air Datepicker -->
+        <script src="functions/js/func_air_datepicker.js"></script>
+
+        <!-- Jquery Mask Plugin -->
+        <script src="functions/js/func_jquery_mask_plugin.js"></script>
+
+    </body>
+</html>

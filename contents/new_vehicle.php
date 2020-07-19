@@ -12,6 +12,9 @@
             <div class="item label">
                 <label>Type</label>
             </div>
+            
+
+            <!-- load informations from the database for types, brands, models and enginee-->
 
             <div class="container radios">
                 <?php
@@ -19,7 +22,7 @@
                     $query = mysqli_query($conn, $sql);
 
                     while ( $ln = mysqli_fetch_assoc($query)) {
-                        $vehicle = str_replace('', '', mb_strtolower($ln['vtp_name']));
+                        $vehicle = str_replace('', '', mb_strtolower($ln['vtp_name'])); //transforms the vehicle type into a single word
                 ?>
                 
                 <div class="item">
@@ -32,7 +35,7 @@
                 ?>
             </div>
             
-            <!-- load informations from the database-->
+           
             <div class="item">
                 <label for="brand">Brand</label>
                 <select id="brand" required>
@@ -84,7 +87,7 @@
                     $query = mysqli_query($conn, $sql);
 
                     while ( $ln = mysqli_fetch_assoc($query)) {
-                        $engine = str_replace(' ', '', mb_strtolower($ln['vet_name']));
+                       
                 ?>
 
                 <div class="item">

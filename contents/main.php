@@ -1,4 +1,4 @@
-<!-- contains the content to be included on the index -->
+<!-- contains the content to be included on the content index -->
 <section id="presentation">
     <div>
         <h1>

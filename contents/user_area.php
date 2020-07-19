@@ -20,11 +20,10 @@
 
         <?php include('validation.php'); ?>
 
+        <!-- show the completed bookings-->
         <?php
             if ( $numVehicle > 0 ) {
-        ?>
-
-            <?php
+        
                 if ( $numBooking > 0 ) {
             ?>
 
@@ -47,9 +46,12 @@
 
                             while($ln = mysqli_fetch_assoc($query)) {
                     ?>
+                    <div class="item">
+                        <div class="container photo">
+                            <img src="public/images/<?php echo $ln['srv_photo']; ?>.jpg">
+                        </div>
                     
-                        <div class="container info">
-                            <span><?php echo ucfirst($ln['srv_name']); ?></span>
+                        <div class="container info">                         
                             <span><?php echo date('d/m/Y', strtotime($ln['bkg_date'])); ?></span>
                         </div>
                     </div>
@@ -66,11 +68,11 @@
                 </div>
             </div>
 
+             <!-- show the incompleted bookings-->
             <div class="wrapper scheduled">
                 <span>Scheduled</span>
 
                 <div class="container">
-
                     <?php
                         $sql = "SELECT *
                         FROM `bookings`
@@ -86,9 +88,12 @@
                             while($ln = mysqli_fetch_assoc($query)) {
                     ?>
 
+                        <div class="item">
+                        <div class="container photo">
+                            <img src="public/images/<?php echo $ln['srv_photo']; ?>.jpg">
+                        </div>
                     
                         <div class="container info">
-                            <span><?php echo ucfirst($ln['srv_name']); ?></span>
                             <span><?php echo date('d/m/Y H:i', strtotime($ln['bkg_date'])); ?></span>
                             <span><?php echo ucfirst($ln['bkg_status']); ?></span>
                         </div>
@@ -123,6 +128,7 @@
                 }
             ?>
 
+            <!--Options to register a new vehiacle or booking a service-->
             <div class="container-new">
                 <a href="?pag=new_vehicle" class="new vehicle" title="New vehicle"><img src="public/images/new_vehicle.svg"></a>
 
@@ -132,6 +138,7 @@
             } else {
         ?>
 
+        <!-- register a vehicle first-->
         <div class="wrapper">
             <div class="container empty">
                 No registered vehicles. You need to register a vehicle
