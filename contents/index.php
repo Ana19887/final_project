@@ -11,10 +11,12 @@
         <link href="public/css/forms.css" rel="stylesheet" type="text/css">
         <link href="public/css/register.css" rel="stylesheet" type="text/css">
         <link href="public/css/login.css" rel="stylesheet" type="text/css">
-        <link href="public/css/buttom.css" rel="stylesheet" type="text/css">
+        <link href="public/css/button.css" rel="stylesheet" type="text/css">
         <link href="public/css/validation.css" rel="stylesheet" type="text/css">
         <link href="public/css/user_area.css" rel="stylesheet" type="text/css">
         <link href="public/css/new_service.css" rel="stylesheet" type="text/css">
+        <link href="public/css/reset.css" rel="stylesheet" type="text/css">
+
 
         
         <title>GER'S Auto Service & Repair - <?php echo $page_title; ?></title>

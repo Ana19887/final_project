@@ -71,7 +71,7 @@
                                 'message' => "We don't have available times for this date"
                             );
         
-                            header('location:../../?pag=user_area');
+                            header('location:../../?pag=new_vehicle');
                             die;
                         } else {
                             $next = FALSE;
@@ -108,7 +108,7 @@
                 'message' => 'Problem in registering'
             );
             
-            header('location:../../?pag=user_area');
+            header('location:../../?pag=new_service');
             die;
         }
     } else {

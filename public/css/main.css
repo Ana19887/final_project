@@ -157,7 +157,7 @@
 #about .container-social {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 #about .container-social a:not(:last-child) {

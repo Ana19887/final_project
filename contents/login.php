@@ -2,6 +2,7 @@
     <div>
         <h2>Login</h2>
 
+        <!-- message of validation-->
         <?php include('validation.php'); ?>
 
         <form action="functions/php/func_login.php" method="POST">

@@ -5,8 +5,8 @@
 <section id="new_service">
     <div>
         <h2>
-            <span>Book a new</span>
-            Service
+            <span>Book a new </span>
+                    Service
         </h2>
 
         <?php include('validation.php'); ?>
