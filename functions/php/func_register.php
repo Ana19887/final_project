@@ -22,7 +22,7 @@
         //executing sql query
         $query = mysqli_query($conn, $sql);
         
-       //log in user after the register
+       //login user after the register and redirect to the user_area
         if ($query){
             $id = mysqli_insert_id($conn);        //return the last ID generate by the query (auto_increment)
 

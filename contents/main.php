@@ -8,11 +8,13 @@
         </h1>
     </div>
 
+    <!--PRESENTATION VIDEO-->
     <div>
         <video src="public/videos/1.m4v" autoplay muted loop></video>
     </div>
 </section>
 
+<!--SERVICES DESCRIPTION-->
 <section id="services">
     <div>
         <h2>Services</h2>
@@ -117,6 +119,7 @@
     </div>
 </section>
 
+<!--ABOUT-->
 <section id="about">
     <div>
         <h2>About</h2>
@@ -147,6 +150,7 @@
     </div>
 </section>
 
+<!--CONTACT FORM-->
 <section id="contact">
     <div>
         <h2>Contact</h2>

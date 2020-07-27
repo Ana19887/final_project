@@ -4,7 +4,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$userpass = "";
-	$database = "gers_garage";
+	$database = "gers";
 
 	$conn = mysqli_connect($servername, $username, $userpass, $database);
 

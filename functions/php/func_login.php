@@ -1,7 +1,7 @@
 <?php 
     session_start();
     
-    //check if algo esta sendo enviado via post
+   
     if ($_POST) {
         require('../../configs/server_connection.php');   // connecting to the database
 
@@ -20,7 +20,7 @@
             $ln = mysqli_fetch_assoc($query);
             $hash = $ln['usr_password'];
 
-            //check the passwords
+            //check if the passwords match and redirect the user to the user-area
             if (password_verify($pass, $hash)){
                 $_SESSION['login'] = array(
                     'id'      => $ln['usr_id'],
@@ -32,7 +32,7 @@
 
                 header('location:../../?pag=user_area');
             } else {
-                //error message
+                //error message if the passwords are different and redirect to the login page again
                 $_SESSION['validate'] = array(
                     'type' => 'error',
                     'message' => 'Wrong password.'
@@ -41,6 +41,7 @@
                 header('location:../../?pag=login');
             }
         } else {
+            //error message if the user is not registered and redirect to login page again
             $_SESSION['validate'] = array(
                 'type' => 'error',
                 'message' => 'User not found.'

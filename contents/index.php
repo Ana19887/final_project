@@ -18,12 +18,12 @@
         <link href="public/css/reset.css" rel="stylesheet" type="text/css">
 
 
-        
+        <!-- get the titles for the pages-->
         <title>GER'S Auto Service & Repair - <?php echo $page_title; ?></title>
     </head>
 
     <body>
-
+        <!--HEADER-->
         <header>
             <section id="header">
                 <nav>
@@ -34,7 +34,7 @@
                         <li><a href="?pag=main#about">About</a></li>
                         <li><a href="?pag=main#contact">Contact</a></li>
 
-                        <!-- if the user is loggedin-->
+                        <!-- if the user is loggedin, change the header to show the logout and the initial of the user-->
                         <?php
                             if (isset($_SESSION['login'])) {
                         ?>
@@ -42,8 +42,7 @@
                         <li><a class="user" href="?pag=user_area"><?php echo $_SESSION['login']['name']['0'] ?></a></li>
                         <?php
                             } else {
-                        ?>
-                    
+                        ?>                 
                         <li><a class="login" href="?pag=login">Login</a></li>
                         <li><a href="?pag=register">Register</a></li>
                         <?php
@@ -55,14 +54,14 @@
         </header>
 
 
-        
+        <!-- include the content of the pages passed via GET from the main index -->
         <main>
-            <!-- include the page passed via GET -->
             <?php
                 include("$pag.php");
             ?>
         </main>
 
+        <!--FOOTER-->
         <footer>
             <section id="footer">
                 <div>
@@ -72,6 +71,7 @@
             </section>
         </footer>
 
+        
         <script src="public/js/libraries/jquery-3.5.1.min.js"></script>
 
         <!-- AIR DATEPICKER DEPENDENCES-->

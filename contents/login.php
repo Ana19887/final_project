@@ -2,9 +2,10 @@
     <div>
         <h2>Login</h2>
 
-        <!-- message of validation-->
+        <!-- Validation message -->
         <?php include('validation.php'); ?>
 
+         <!--LOGIN FORM-->
         <form action="functions/php/func_login.php" method="POST">
             <div class="item">
                 <label for="username">Username</label>
