@@ -74,8 +74,8 @@
             <div class="item">
              
             
-            <label for="commentary">Commentary</label>
-                <textarea id="commentary" name="commentary"></textarea>
+            <label for="comment">Comment</label>
+                <textarea id="comment" name="comment"></textarea>
             </div>
 
             <div>

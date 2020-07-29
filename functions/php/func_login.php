@@ -20,7 +20,7 @@
             $ln = mysqli_fetch_assoc($query);
             $hash = $ln['usr_password'];
 
-            //check if the passwords match and redirect the user to the user-area
+            //check if the passwords match and redirect the user to the customer page or admin page
             if (password_verify($pass, $hash)){
                 $_SESSION['login'] = array(
                     'id'      => $ln['usr_id'],
@@ -30,7 +30,12 @@
                     'level'   => $ln['usr_level']
                 );
 
-                header('location:../../?pag=user_area');
+                if ( $_SESSION['login']['level'] == 2 ) {
+                    header('location:../../?pag=admin_area');
+                } else {
+                    header('location:../../?pag=user_area');
+                }    
+                
             } else {
                 //error message if the passwords are different and redirect to the login page again
                 $_SESSION['validate'] = array(

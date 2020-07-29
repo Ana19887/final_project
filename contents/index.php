@@ -34,15 +34,22 @@
                         <li><a href="?pag=main#about">About</a></li>
                         <li><a href="?pag=main#contact">Contact</a></li>
 
-                        <!-- if the user is loggedin, change the header to show the logout and the initial of the user-->
+                        <!--check if the user is admin(level 2) or customer(level 1)-->
                         <?php
                             if (isset($_SESSION['login'])) {
+                                if ( $_SESSION['login']['level'] == 2 ) {
                         ?>
                         <li><a class="logout" href="functions/php/func_logout.php">Logout</a></li>
-                        <li><a class="user" href="?pag=user_area"><?php echo $_SESSION['login']['name']['0'] ?></a></li>
+                        <li><a class="user" href="?pag=admin_area"><?php echo $_SESSION['login']['name']['0'] ?></a></li>
                         <?php
                             } else {
-                        ?>                 
+                        ?>    
+                        <li><a class="logout" href="functions/php/func_logout.php">Logout</a></li>
+                        <li><a class="user" href="?pag=user_area"><?php echo $_SESSION['login']['name']['0'] ?></a></li>
+                            <?php  
+                            }
+                           } else { 
+                        ?>          
                         <li><a class="login" href="?pag=login">Login</a></li>
                         <li><a href="?pag=register">Register</a></li>
                         <?php

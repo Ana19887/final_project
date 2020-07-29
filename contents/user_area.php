@@ -39,7 +39,8 @@
                         INNER JOIN `service_type`
                         ON `bookings`.`bkg_SERVICE_TYPE_srv_id` = `service_type`.`srv_id`
                         
-                        WHERE `bkg_USERS_usr_id` = '$userId' AND `bkg_status` = 'complete'";
+                        WHERE `bkg_USERS_usr_id` = '$userId' AND `bkg_STATUS_sta_id` = 5
+                        ORDER BY `bkg_date` DESC";
                         $query = mysqli_query($conn, $sql);
 
                         if ( mysqli_num_rows($query) > 0 ) {
@@ -79,8 +80,11 @@
 
                         INNER JOIN `service_type`
                         ON `bookings`.`bkg_SERVICE_TYPE_srv_id` = `service_type`.`srv_id`
+
+                        INNER JOIN `status`
+                        ON `bookings`.`bkg_STATUS_sta_id` = `status`.`sta_id`
                         
-                        WHERE `bkg_USERS_usr_id` = '$userId' AND `bkg_status` != 'complete' ORDER BY `bkg_date` DESC";
+                        WHERE `bkg_USERS_usr_id` = '$userId' AND `bkg_STATUS_sta_id` != '5' ORDER BY `bkg_date` DESC";
                         $query = mysqli_query($conn, $sql);
 
                         if ( mysqli_num_rows($query) > 0 ) {
@@ -94,8 +98,9 @@
                         </div>
                     
                         <div class="container info">
+                            <span><?php echo ucfirst($ln['srv_name']); ?></span>
                             <span><?php echo date('d/m/Y H:i', strtotime($ln['bkg_date'])); ?></span>
-                            <span><?php echo ucfirst($ln['bkg_status']); ?></span>
+                            <span><?php echo ucfirst($ln['sta_name']); ?></span>
                         </div>
                     </div>
 

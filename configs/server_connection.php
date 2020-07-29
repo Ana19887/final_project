@@ -4,7 +4,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$userpass = "";
-	$database = "gers";
+	$database = "gers_auto_repair";
 
 	$conn = mysqli_connect($servername, $username, $userpass, $database);
 

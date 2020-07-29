@@ -10,7 +10,7 @@
     if (isset($_GET)) {
         if ( isset($_GET['pag']) ) {
             $allowed_pages = array(
-                'main', 'login', 'register', 'user_area', 'new_vehicle', 'new_service'
+                'main', 'login', 'register', 'user_area', 'new_vehicle', 'new_service', 'admin_area'
             
             );
 
@@ -32,6 +32,34 @@
                         header('location:./?pag=main');
                     }
                 }
+                /* if the user is a customer */
+                elseif ( $pag == 'user_area' ) {
+                    if (isset($_SESSION['login'])) {
+                        if ( $_SESSION['login']['level'] == 1 ) {
+                            $user_name = $_SESSION['login']['name'];
+                            $page_title = "Customer Area";
+                        } else {
+                            header('location:./?pag=main');
+                        }
+                    } else {
+                        header('location:./?pag=main');
+                    }
+                }
+
+                elseif ( $pag == 'new_service' ) {
+                    if (isset($_SESSION['login'])) {
+                        $page_title = 'Booking';
+                    } else {
+                        header('location:./?pag=main');
+                    }    
+                }
+                elseif ( $pag == 'new_vehicle' ) {
+                    if (isset($_SESSION['login'])) {
+                        $page_title = 'New vehicle';
+                    } else {
+                        header('location:./?pag=main');
+                    }    
+                }
                 /*if the user is not login redirect to main page*/
                 elseif ( $pag == 'register' ) {
                     if (!isset($_SESSION['login'])) {
@@ -40,6 +68,21 @@
                         header('location:./?pag=main');
                     }
                 }
+
+                /* administrator */
+                elseif ( $pag == 'admin' ) {
+                    if (isset($_SESSION['login'])) {
+                        if ( $_SESSION['login']['level'] == 2 ) {
+                            $page_title = 'Administrator';
+                        } else {
+                            header('location:./?pag=main');
+                        }
+                    } else {
+                        header('location:./?pag=main');
+                    }
+                }
+
+
                 /* coping the code */
                 include("contents/index.php");
             } else {
