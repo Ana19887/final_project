@@ -18,7 +18,7 @@
         <link href="public/css/reset.css" rel="stylesheet" type="text/css">
 
 
-        <!-- get the titles for the pages-->
+        <!-- Get the titles for the pages-->
         <title>GER'S Auto Service & Repair - <?php echo $page_title; ?></title>
     </head>
 
@@ -40,12 +40,12 @@
                                 if ( $_SESSION['login']['level'] == 2 ) {
                         ?>
                         <li><a class="logout" href="functions/php/func_logout.php">Logout</a></li>
-                        <li><a class="user" href="?pag=admin_area"><?php echo $_SESSION['login']['name']['0'] ?></a></li>
+                        <li><a class="user" href="?pag=admin_area"><?php echo ucfirst( $_SESSION['login']['name']['0']) ?></a></li>
                         <?php
                             } else {
                         ?>    
                         <li><a class="logout" href="functions/php/func_logout.php">Logout</a></li>
-                        <li><a class="user" href="?pag=user_area"><?php echo $_SESSION['login']['name']['0'] ?></a></li>
+                        <li><a class="user" href="?pag=user_area"><?php echo ucfirst($_SESSION['login']['name']['0']) ?></a></li>
                             <?php  
                             }
                            } else { 
@@ -61,7 +61,7 @@
         </header>
 
 
-        <!-- include the content of the pages passed via GET from the main index -->
+        <!-- include the content of the pages passed via GET -->
         <main>
             <?php
                 include("$pag.php");

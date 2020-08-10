@@ -5,7 +5,7 @@
 <section id="new_service">
     <div>
         <h2>
-            <span>Book a new </span>
+            <span>Book a  </span>
                     Service
         </h2>
 
@@ -32,7 +32,7 @@
                         while ( $ln = mysqli_fetch_assoc($query) ) {
                     ?>
                     <!-- shows the model and brand of the registered vehicles by the user -->
-                    <option value="<?php echo $ln['veh_id']; ?>"><?php echo $ln['vbd_name'].' - '.$ln['vmd_name']; ?></option>
+                    <option value="<?php echo $ln['veh_id']; ?>"><?php echo $ln['vbd_name'].' - '.$ln['vmd_name'].' - '.$ln['veh_license_details']; ?></option>
                     
                     <?php
                         }
@@ -74,8 +74,8 @@
             <div class="item">
              
             
-            <label for="comment">Comment</label>
-                <textarea id="comment" name="comment"></textarea>
+            <label for="commentary">Commentary</label>
+                <textarea id="commentary" name="commentary"></textarea>
             </div>
 
             <div>

@@ -1,4 +1,4 @@
-<!-- VALIDATION OF THE FORMS-->
+<!-- VALIDATION MESSAGE-->
 <?php
     if (isset($_SESSION['validate'])) {
 ?>

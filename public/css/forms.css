@@ -44,6 +44,8 @@ input,
 textarea,
 select {
     background: #202020;
+    padding: 0 1rem;
+    width: 100%;
     color: rgba(255, 255, 255, 0.6);
     border: 0;
     border-radius: 0.2rem;

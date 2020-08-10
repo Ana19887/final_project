@@ -30,6 +30,7 @@
                     'level'   => $ln['usr_level']
                 );
 
+               //redirect the user according to its level 
                 if ( $_SESSION['login']['level'] == 2 ) {
                     header('location:../../?pag=admin_area');
                 } else {

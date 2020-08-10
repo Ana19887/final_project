@@ -1,8 +1,8 @@
 <section id="new_service">
     <div>
         <h2>
-            <span>Book a new</span>
-            Service
+            <span>Register </span>
+                New Vehicle
         </h2>
 
         <?php include('validation.php'); ?>
@@ -102,8 +102,8 @@
             </div>
 
             <div class="item">
-                <label for="licence">Licence details</label>
-                <input id="licence" type="text" name="licence" required>
+                <label for="license">License details</label>
+                <input id="license" type="text" name="license" required>
             </div>
 
             <div>

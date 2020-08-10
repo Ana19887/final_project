@@ -14,19 +14,22 @@
 <section id="user_area">
     <div>
         <h2>
+            <!-- shows the name of the customer-->
             <span>Welcome,</span>
-            <?php echo $_SESSION['login']['name']; ?>
+            <?php echo ucfirst($_SESSION['login']['name']); ?>
         </h2>
 
         <?php include('validation.php'); ?>
 
-        <!-- show the completed bookings-->
+        <!-- if there are vehicles registered, show the option to register a new vehicle and book a service-->
         <?php
             if ( $numVehicle > 0 ) {
-        
+        ?>
+
+            <?php
                 if ( $numBooking > 0 ) {
             ?>
-
+            <!-- show the completed bookings-->
             <div class="wrapper last">
                 <span>Last completed services</span>
 
@@ -41,6 +44,7 @@
                         
                         WHERE `bkg_USERS_usr_id` = '$userId' AND `bkg_STATUS_sta_id` = 5
                         ORDER BY `bkg_date` DESC";
+
                         $query = mysqli_query($conn, $sql);
 
                         if ( mysqli_num_rows($query) > 0 ) {
@@ -52,8 +56,10 @@
                             <img src="public/images/<?php echo $ln['srv_photo']; ?>.jpg">
                         </div>
                     
-                        <div class="container info">                         
-                            <span><?php echo date('d/m/Y', strtotime($ln['bkg_date'])); ?></span>
+                        <div class="container info">  
+                            <span><?php echo ucfirst($ln['srv_name']); ?></span> <!--first letter in capital-->  
+                            <span><strong>License:</strong> <?php echo strtoupper($ln['veh_license_details']); ?></span>                     
+                            <span><?php echo date('d/m/Y', strtotime($ln['bkg_date'])); ?></span><!--transform the string in a time-->
                         </div>
                     </div>
                     <?php
@@ -69,9 +75,9 @@
                 </div>
             </div>
 
-             <!-- show the incompleted bookings-->
+             <!-- shows in services bookings-->
             <div class="wrapper scheduled">
-                <span>Scheduled</span>
+                <span>In progress services</span>
 
                 <div class="container">
                     <?php
@@ -83,6 +89,9 @@
 
                         INNER JOIN `status`
                         ON `bookings`.`bkg_STATUS_sta_id` = `status`.`sta_id`
+
+                        INNER JOIN `vehicles`
+                        ON `bookings`.`bkg_VEHICLES_veh_id` = `vehicles`.`veh_id`
                         
                         WHERE `bkg_USERS_usr_id` = '$userId' AND `bkg_STATUS_sta_id` != '5' ORDER BY `bkg_date` DESC";
                         $query = mysqli_query($conn, $sql);
@@ -100,6 +109,7 @@
                         <div class="container info">
                             <span><?php echo ucfirst($ln['srv_name']); ?></span>
                             <span><?php echo date('d/m/Y H:i', strtotime($ln['bkg_date'])); ?></span>
+                            <span><strong>License:</strong> <?php echo strtoupper($ln['veh_license_details']); ?></span>
                             <span><?php echo ucfirst($ln['sta_name']); ?></span>
                         </div>
                     </div>
@@ -133,17 +143,16 @@
                 }
             ?>
 
-            <!--Options to register a new vehiacle or booking a service-->
+            <!--Options to register a new vehicle or booking a service-->
             <div class="container-new">
                 <a href="?pag=new_vehicle" class="new vehicle" title="New vehicle"><img src="public/images/new_vehicle.svg"></a>
-
                 <a href="?pag=new_service" class="new service" title="New booking"><img src="public/images/new_booking.svg"></a>
             </div>
         <?php
             } else {
         ?>
 
-        <!-- register a vehicle first-->
+        <!-- No vehicle registered, show just the option to register a vehicle -->
         <div class="wrapper">
             <div class="container empty">
                 No registered vehicles. You need to register a vehicle

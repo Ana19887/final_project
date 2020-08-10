@@ -42,6 +42,8 @@
     flex-wrap: wrap;
     padding: 2rem 2rem 0;
     border-radius: 0.2rem;
+    max-height: 9.5rem;
+    overflow: auto;
 }
     #user_area .wrapper > .container.empty {
         justify-content: center;
@@ -118,8 +120,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4.0rem;
+    height: 4.0rem;
     border-radius: 50%;
 }
     #user_area .new:not(:last-child) {

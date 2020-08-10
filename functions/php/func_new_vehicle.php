@@ -1,19 +1,23 @@
+<!--REGISTER VEHICLE FUNCTION-->
+
 <?php 
     session_start();
     
     if ($_POST) {
         require('../../configs/server_connection.php');
 
+        // receive input values from the form 
         $user       = $_SESSION['login']['id'];  
         $type       = $_POST['type'];
         $model      = $_POST['model'];
         $engine     = $_POST['engine'];
-        $licence    = $_POST['licence'];
+        $license    = $_POST['license'];
 
-        $sql = "INSERT INTO `vehicles` VALUES(NULL, '$user', '$type', '$model', '$engine', '$licence')";
+        $sql = "INSERT INTO `vehicles` VALUES(NULL, '$user', '$type', '$model', '$engine', '$license')";
 
         $query = mysqli_query($conn, $sql);
         
+        //validation form
         if ($query){
             $_SESSION['validate'] = array(
                 'type' => 'ok',
@@ -27,7 +31,7 @@
                 'message' => 'Problem adding vehicle'
             );
             
-            header('location:../../?pag=user_area');
+            header('location:../../?pag=new_vehicle');
         }
     } else {
         header('location:../../?pag=main');
