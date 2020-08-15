@@ -52,7 +52,6 @@ select {
 }
 
 input[type=text],
-input[type=email],
 input[type=password],
 input[type=tel],
 input[type=date],
@@ -61,7 +60,6 @@ select {
 }
 
 input[type=text]:focus,
-input[type=email]:focus,
 input[type=password]:focus,
 input[type=tel]:focus,
 input[type=date]:focus,
@@ -71,6 +69,7 @@ select:focus {
     outline: none;
 }
 
+/*Calendar in book a service*/
 input#date {
     background: url('../images/calendar.svg') no-repeat;
     background-color: #202020;
@@ -80,8 +79,6 @@ select {
     background: url('../images/select_arrow.svg') no-repeat;
     background-color: #202020;
     background-position: calc(100% - 0.8rem) center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 }
 

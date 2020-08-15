@@ -6,10 +6,10 @@
     $numBooking = mysqli_num_rows($query);
 ?>
 
+<!-- shows the admin name-->
 <section id="user_area">
     <div>
-        <h2>
-            <!-- shows the name of the admin-->
+        <h2>         
             <span>Welcome,</span>
             <?php echo $_SESSION['login']['name']; ?>
         </h2>
@@ -29,6 +29,7 @@
             <div class="container">
 
                 <?php
+                    /*Select just bookings in the status 5 */   
                     $sql = "SELECT *
                     FROM `bookings`
 
@@ -40,7 +41,7 @@
 
                     INNER JOIN `vehicles`
                     ON `bookings`.`bkg_VEHICLES_veh_id` = `vehicles`.`veh_id`
-                                    
+                      
                     WHERE `bkg_STATUS_sta_id` = 5 ORDER BY `bkg_date` DESC";
                     $query = mysqli_query($conn, $sql);
 
@@ -56,11 +57,11 @@
                             <img src="public/images/<?php echo $ln['srv_photo']; ?>.jpg">
                         </a>
                     </div>
-
+                    
                     <div class="container info">
                         <span><?php echo ucfirst($ln['srv_name']); ?></span>
                         <span><strong>License:</strong><?php echo strtoupper($ln['veh_license_details']); ?></span>
-                        <span><?php echo date('d/m/Y H:i', strtotime($ln['bkg_date'])); ?></span>
+                        <span><?php echo date('d/m/Y ', strtotime($ln['bkg_date'])); ?></span>
                         <span><?php echo ucfirst($ln['sta_name']); ?></span>
                     </div>
                 </div>
@@ -85,6 +86,7 @@
             <div class="container">
 
                 <?php
+                /*Select just bookings in the status 2, 3 and 4 */
                     $sql = "SELECT *
                     FROM `bookings`
 
@@ -141,6 +143,7 @@
             <div class="container">
 
                 <?php
+                /*Select just bookings in the status 1 */
                     $sql = "SELECT *
                     FROM `bookings`
 
@@ -171,9 +174,9 @@
 
                     <div class="container info">
                         <span><?php echo ucfirst($ln['srv_name']); ?></span>
-                        <span><strong>License:</strong> <?php echo $ln['veh_license_details']; ?></span>
+                        <span><strong>License:</strong> <?php echo strtoupper($ln['veh_license_details']); ?></span>
                         <span><?php echo date('d/m/Y H:i', strtotime($ln['bkg_date'])); ?></span>
-                        <span><strong>Comment:</strong> <?php echo $ln['bkg_commentary']; ?></span>
+                        <span><strong>Comment</strong> <?php echo $ln['bkg_commentary']; ?></span>
                         <span><?php echo ucfirst($ln['sta_name']); ?></span>
                     </div>
                 </div>
@@ -193,7 +196,7 @@
             </div>
         </div>
         
-        <!-- option to redirect to the week's schedule -->
+        <!-- print the weekly schedule -->
         <div class="container-new">
             <a href="functions/php/func_schedule.php?schedule=weekly" target="_blank" class="new weekly" title="Weekly schedule">
                 <img src="public/images/weekly_calendar.svg">

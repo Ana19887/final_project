@@ -35,7 +35,7 @@
                 
                 $check_hour = '08:00:00';
 
-                /*check the availability time for a booking */
+                /*check the available times for a booking */
                 
                 //check if there are available times for 8:00
                 if (in_array($check_hour, $hours)) {
@@ -95,11 +95,12 @@
         $commentary = $_POST['commentary'];
         $status = 1; 
 
-        //Insert into db
+        //Insert information into db
         $sql = "INSERT INTO `bookings` VALUES(NULL, '$user', '$vehicle', '$service', NULL, '$date', NULLIF('$commentary',''), '$status')";
 
         $query = mysqli_query($conn, $sql);
         
+        //validation
         if ($query){
             $_SESSION['validate'] = array(
                 'type' => 'ok',

@@ -1,4 +1,4 @@
-<!-- function to print the invoice-->
+<!-- PRINT INVOICE-->
 <?php
     session_start();
 
@@ -8,6 +8,7 @@
  
         $bookingId = $_GET['booking_id'];
 
+        //select informations just from the bookings with the status=5
         $sql = "SELECT *
         FROM `bookings`
 
@@ -45,13 +46,13 @@
             while ( $ln = mysqli_fetch_assoc($query) ) {
                 $val = $ln['bep_EXTRA_PARTS_exp_id'];
 
-                array_push($partsId, $val); //armazena os id das partes extras//inserindo num array existente novas informações
+                array_push($partsId, $val); //store the ids of extra parts in partsId array
             }
             
             
-            $partsId = implode(',', $partsId); //transfoma o array em string
+            $partsId = implode(',', $partsId); //transform the array into a string
         
-            //retrive extra parts and price
+            //select just the extra parts used
             $sql = "SELECT *
             FROM `extra_parts`
             

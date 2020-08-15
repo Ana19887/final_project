@@ -3,16 +3,17 @@
     
    
     if ($_POST) {
-        require('../../configs/server_connection.php');   // connecting to the database
+        // connect to the database
+        require('../../configs/server_connection.php');   
 
         // receive all input values from the form 
         $username = $_POST['username'];
         $pass     = $_POST['password'];
 
-        //sql query
+        
         $sql = "SELECT * FROM `users` WHERE `usr_username`='$username'";
 
-        //execute sql query
+      
         $query = mysqli_query($conn, $sql);
 
         
@@ -41,7 +42,7 @@
                 //error message if the passwords are different and redirect to the login page again
                 $_SESSION['validate'] = array(
                     'type' => 'error',
-                    'message' => 'Wrong password.'
+                    'message' => 'Incorrect password.'
                 );
 
                 header('location:../../?pag=login');

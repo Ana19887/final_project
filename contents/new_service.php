@@ -2,6 +2,7 @@
     $userId = $_SESSION['login']['id'];
 ?>
 
+<!-- BOOK A SERVICE -->
 <section id="new_service">
     <div>
         <h2>
@@ -12,6 +13,7 @@
         <?php include('validation.php'); ?>
 
         <form action="functions/php/func_new_service.php" method="POST">
+            <!-- CHOOSE VEHICLE -->
             <div class="item">
                 <label for="vehicle">Vehicle</label>
                 <select id="vehicle" name="vehicle" required>
@@ -31,7 +33,7 @@
 
                         while ( $ln = mysqli_fetch_assoc($query) ) {
                     ?>
-                    <!-- shows the model and brand of the registered vehicles by the user -->
+                    <!-- shows the model, brand and license number of the registered vehicles by the user -->
                     <option value="<?php echo $ln['veh_id']; ?>"><?php echo $ln['vbd_name'].' - '.$ln['vmd_name'].' - '.$ln['veh_license_details']; ?></option>
                     
                     <?php
@@ -40,6 +42,7 @@
                 </select>
             </div>
 
+               <!-- CHOOSE SERVICE -->
             <div class="item label">
                 <label>Service type</label>
             </div>
@@ -65,7 +68,7 @@
                 ?>
             </div>
 
-            <!-- select a date for the service-->
+            <!-- CHOOSE DATE -->
             <div class="item">
                 <label for="date">Choose a date</label>
                 <input id="date" type="text" name="date" readonly required>
@@ -73,7 +76,7 @@
 
             <div class="item">
              
-            
+            <!-- WRITE COMMENTARY -->
             <label for="commentary">Commentary</label>
                 <textarea id="commentary" name="commentary"></textarea>
             </div>

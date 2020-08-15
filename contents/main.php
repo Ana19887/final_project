@@ -12,6 +12,7 @@
     <!--PRESENTATION VIDEO-->
     <div>
         <video src="public/videos/1.m4v" autoplay muted loop></video>
+        <!--https://www.pexels.com/-->
     </div>
 </section>
 
@@ -25,6 +26,7 @@
         <div class="card">
             <div class="container-photo">
                 <img class="photo" src="public/images/1.jpg">
+                <!--https://www.pexels.com/-->
             </div>
 
             <div class="container">
@@ -46,6 +48,7 @@
         <div class="card">
             <div class="container-photo">
                 <img class="photo" src="public/images/2.jpg">
+                <!--https://www.pexels.com/-->
             </div>
             
             <div class="container">
@@ -67,6 +70,7 @@
         <div class="card">
             <div class="container-photo">
                 <img class="photo" src="public/images/3.jpg">
+                <!--https://www.pexels.com/-->
             </div>
             
             <div class="container">
@@ -88,6 +92,7 @@
         <div class="card">
             <div class="container-photo">
                 <img class="photo" src="public/images/4.jpg">
+                <!--https://www.pexels.com/-->
             </div>
 
             <div class="container">

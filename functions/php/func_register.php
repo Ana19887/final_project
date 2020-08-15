@@ -15,10 +15,10 @@
         //Hash password using the algorithm PASSWORD_BCRYPT before saving in the database
         $pass = password_hash($pass, PASSWORD_BCRYPT);
 
-        //Sql query
+        
         $sql = "INSERT INTO `users` VALUES(NULL, '$name', '$surname', '$phone', '$username', '$pass', '$level')";
 
-        //Execute query
+        
         $query = mysqli_query($conn, $sql);
         
        //login user after the register and redirect to the user_area
@@ -35,15 +35,15 @@
           
             header('location:../../?pag=user_area');
 
-            //Validations in the register
+            //Validations 
         } else {
-            if (mysqli_errno($conn) == 1062){ //1062 is a error when mysql find a duplicate row that is trying to insert
+            if (mysqli_errno($conn) == 1062){ //1062 is a error when mysql find a duplicate row, in this case username
                 $_SESSION['validate'] = array(
                     'type' => 'error', 
-                    'message' => 'User already registered'
+                    'message' => 'Username already registered'
                 );
                 
-                header('location:../../?pag=login');
+                header('location:../../?pag=register');
             } else {
                 $_SESSION['validate'] = array(
                     'type' => 'error', 

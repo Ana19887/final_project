@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    //Check session
     if ( !isset($_SESSION['report']) ) {
         header('location:../?pag=main');
         
@@ -19,6 +20,7 @@
         <title>Invoice</title>
     </head>
 
+        <!--Information to show in the invoice-->
     <body>
         <img src="../public/images/logo.svg">
         <p><strong>Client: </strong> <?php echo $report['user']; ?></p>

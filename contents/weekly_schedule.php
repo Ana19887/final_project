@@ -1,4 +1,4 @@
-<!--PAGE TO PRINT THE WEEK'S SCHEDULE-->
+<!--PAGE TO PRINT THE WEEKLY SCHEDULE-->
 
 <!--Start a session-->
 <?php
@@ -24,7 +24,7 @@
         <title>Weekly Schedule</title>
     </head>
 
-    <!--SCHEDULE html -->
+    <!--SCHEDULE HTML -->
     <body>
         <img src="../public/images/logo.svg">
         <h1>Weekly Schedule</h1>
@@ -39,7 +39,7 @@
                     <th>Nº</th>
                     <th>Hour</th>
                     <th>Mechanic</th>
-                    <th>User</th>
+                    <th>Customer</th>
                     <th>Licence</th>
                     <th>Service</th>
                 </tr>
@@ -92,7 +92,7 @@
                     <th>Nº</th>
                     <th>Hour</th>
                     <th>Mechanic</th>
-                    <th>User</th>
+                    <th>Customer</th>
                     <th>License</th>
                     <th>Service</th>
                 </tr>
@@ -143,7 +143,7 @@
                     <th>Nº</th>
                     <th>Hour</th>
                     <th>Mechanic</th>
-                    <th>User</th>
+                    <th>Customer</th>
                     <th>License</th>
                     <th>Service</th>
                 </tr>
@@ -194,7 +194,7 @@
                     <th>Nº</th>
                     <th>Hour</th>
                     <th>Mechanic</th>
-                    <th>User</th>
+                    <th>Customer</th>
                     <th>License</th>
                     <th>Service</th>
                 </tr>
@@ -245,7 +245,7 @@
                     <th>Nº</th>
                     <th>Hour</th>
                     <th>Mechanic</th>
-                    <th>User</th>
+                    <th>Customer</th>
                     <th>License</th>
                     <th>Service</th>
                 </tr>
@@ -296,7 +296,7 @@
                     <th>Nº</th>
                     <th>Hour</th>
                     <th>Mechanic</th>
-                    <th>User</th>
+                    <th>Customer</th>
                     <th>License</th>
                     <th>Service</th>
                 </tr>

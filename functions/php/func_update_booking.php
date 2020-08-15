@@ -97,6 +97,7 @@
         if ($extras_parts != TRUE ) {
             $query = mysqli_query($conn, $sql);
             
+            //Validations
             if ($query){
                 $_SESSION['validate'] = array(
                     'type' => 'ok',

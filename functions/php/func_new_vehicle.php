@@ -17,7 +17,7 @@
 
         $query = mysqli_query($conn, $sql);
         
-        //validation form
+        //validation 
         if ($query){
             $_SESSION['validate'] = array(
                 'type' => 'ok',
