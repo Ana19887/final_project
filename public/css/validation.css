@@ -1,0 +1,15 @@
+.validate {
+    background: #202020;
+    margin-bottom: 4rem;
+    padding: 1.5rem 4rem;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 0.2rem;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+    .validate.ok {
+        background: #0EC281;
+    }
+    .validate.error {
+        background: #df6d4b;
+    }
