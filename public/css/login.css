@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 88px); 
+    height: calc(100vh - 5.5rem); 
 }
 
 #login > div {
@@ -15,11 +15,11 @@
 }
 
 #login h2 {
-    margin: 0 0 64px;
+    margin: 0 0 4rem;
     text-align: center;
     color: #0EC281;
 }
 
 #login form {
-    width: 288px;
+    width: 18rem;
 }

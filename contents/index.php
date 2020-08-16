@@ -11,6 +11,7 @@
         <link href="public/css/forms.css" rel="stylesheet" type="text/css">
         <link href="public/css/register.css" rel="stylesheet" type="text/css">
         <link href="public/css/login.css" rel="stylesheet" type="text/css">
+        <link href="public/css/buttom.css" rel="stylesheet" type="text/css">
 
         <title>GER'S Auto Service & Repair - <?php echo $page_title; ?></title>
     </head>
@@ -52,5 +53,5 @@
             </section>
         </footer>
 
-    </body>
-</html>
+        </body>
+</html>  

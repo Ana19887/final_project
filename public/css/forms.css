@@ -8,26 +8,26 @@ form .container {
     justify-content: space-between;
 }
     form .container .item:first-child {
-        margin-right: 10px;
+        margin-right: 1rem;
     }
 
 form .item {
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
     form .item:last-child {
         margin-bottom: 0;
     }
 
 form .item.label {
-    margin-top: 27px;
-    margin-bottom: 8px;
+    margin-top: 1.7rem;
+    margin-bottom: 0.5rem;
 }
 
 label {
     display: block;
-    height: 24px;
+    height: 1.5rem;
     font-weight: 700;
     color: #ffffff;
 }
@@ -37,18 +37,18 @@ textarea,
 select,
 button {
     font-family: 'Archivo', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 input,
 textarea,
 select {
     background: #202020;
-    padding: 0 16px;
-    width: 90%;
+    padding: 0 1rem;
+    width: 100%;
     color: rgba(255, 255, 255, 0.6);
     border: 0;
-    border-radius: 3px;
+    border-radius: 0.2rem;
 }
 
 input[type=text],
@@ -57,7 +57,7 @@ input[type=password],
 input[type=tel],
 input[type=date],
 select {
-    height: 40px;
+    height: 2.5rem;
 }
 
 input[type=text]:focus,
@@ -67,12 +67,12 @@ input[type=tel]:focus,
 input[type=date]:focus,
 textarea:focus,
 select:focus {
-    border: 1.6px solid #0EC281;
+    border: 0.1rem solid #0EC281;
     outline: none;
 }
 
 
 textarea {
-    padding: 10px 16px;
+    padding: 1rem 1rem;
     resize: none;
 }

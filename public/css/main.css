@@ -6,14 +6,14 @@
 #presentation {
     display: flex;
     align-items: center;
-    height: 500px; /* #header .logo(height) + #header(padding) */
+    height: calc(100vh - 5.5rem);
 }
 
 #presentation div:first-child {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-right: 32px;
+    padding-right: 2rem;
     width: 40%;
 }
 
@@ -23,35 +23,36 @@
 
 #presentation div:first-child > span {
     display: block;
-    margin-top: 50px;
-    padding: 5px 0;
+    margin-top: 4rem;
+    padding: 0.3rem 0;
     width: 100%;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500;
+    border-bottom: 0.3rem solid #0EC281;
     
 }
 
 #presentation video {
     width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
     opacity: 0.7;
 }
 
 #presentation h1 {
     margin: 0;
-    line-height: 56px;
+    line-height: 3.5rem;
 }
 
 #presentation h1 span {
     display: block;
-    font-size: 19px;
+    font-size: 1.2rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.6);
 }
 
 #presentation h1 span:last-child {
-    padding-right: 144px;
+    padding-right: 9rem;
     text-align: right;
 }
 
@@ -65,41 +66,41 @@
 
 #services .card {
     background: rgba(255, 255, 255, 0.03);
-    margin-bottom: 32px;
-    width: 48.3%;
-    border-radius: 8px 8px 8px 8px;
+    margin-bottom: 2rem;
+    width: calc(50% - 1rem);
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 #services .card:nth-child(odd) {
-    margin-right: 32px;
+    margin-right: 2rem;
 }
 
 #services .container-photo {
-    height: 150px;
+    height: 9rem;
 }
 
 #services .photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px 8px 0 0;
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 #services .container {
-    padding: 0 35px 35px;
+    padding: 0 3rem 3rem ;
 }
 
 #services .container-description {
-    height: 256px;
+    height: 16rem;
 }
 
 #services .list {
-    columns: 2;
-    column-gap: 48px;
+    columns: 0.5rem;
+    column-gap: 3rem;
 }
 
 #services .list li {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
     color: #0EC281;
 }
 
@@ -108,15 +109,15 @@
 }
 
 #services h3 {
-    margin: 48px auto;
+    margin: 3rem auto;
     text-align: center;
     color: #ffffff;
-    letter-spacing: 4.8px;
+    letter-spacing: 0.3rem;
 }
 
 #services .container-price {
     display: inline-block;
-    margin-top: 80px;
+    margin-top: 5rem;
     margin-left: 50%;
     transform: translateX(-50%);
     font-weight: 700;
@@ -129,7 +130,7 @@
 
 #services .price {
     color: #0EC281;
-    font-size: 48px;
+    font-size: 3rem;
 }
 
 
@@ -149,23 +150,23 @@
 
 #about .logo {
     display: block;
-    margin: 0 auto 32px;
-    width: 112px;
+    margin: 0 auto 2rem;
+    width: 7rem;
 }
 
 #about .container-social {
     display: flex;
     justify-content: center;
-    margin-top: 16px;
+    margin-top: 1rem;
 }
 
 #about .container-social a:not(:last-child) {
-    margin-right: 16px;
+    margin-right: 1rem;
 }
 
 #about .container-social img {
     transition: opacity ease 1s;
-    width: 40px;
+    width: 2.5rem;
     opacity: 0.4;
 }
 
@@ -177,7 +178,7 @@
 /* CONTACT */
 #contact > div:first-child span {
     display: block;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
 
 #contact > div:last-child {
@@ -186,7 +187,7 @@
 }
 
 #contact form {
-    max-width: 800px;
+    max-width: 50rem;
 }
 
 #contact form > div {
@@ -200,13 +201,13 @@
 }
 
 #contact form > div > div:not(:last-child) {
-    margin-right: 16px;
+    margin-right: 1rem;
 }
 
 #contact textarea {
-    height: 200px;
+    height: 12.5rem;
 }
 
 #contact .button {
-    margin-top: 16px;
+    margin-top: 1rem;
 }

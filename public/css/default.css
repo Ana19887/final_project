@@ -9,7 +9,7 @@ body {
 main {
     background: #292929;
     position: relative;
-    margin-bottom: 80px;
+    margin-bottom: 5rem;
     z-index: 1;
 }
 
@@ -23,8 +23,8 @@ footer {
 section {
     position: relative;
     margin: auto;
-    padding: 0 16px;
-    max-width: 1280px;
+    padding: 0 1rem;
+    max-width: 80rem;
 }
 
 h1, h2 {
@@ -32,11 +32,11 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 112px;
+    font-size: 7rem;
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 2rem;
 }
 
 h3 {
@@ -44,20 +44,20 @@ h3 {
 }
 
 p {
-    line-height: 22px;
+    line-height: 1.4rem;
 }
 
 section#services,
 section#about,
 section#contact {
     display: flex;
-    padding: 160px 16px;
+    padding: 10rem 1rem;
 }
 
 section#services > div:first-child,
 section#about > div:first-child,
 section#contact > div:first-child {
-    padding-right: 24px;
+    padding-right: 2rem;
     width: 25%;
 }
 
@@ -77,16 +77,16 @@ section#contact::before {
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
-    height: 1.6px;
+    height: 0.1rem;
 }
 
 section#services h2,
 section#about h2,
 section#contact h2 {
-    margin: 0 0 24px;
-    font-size: 28px;
-    padding: 40px 0 5px 0;
-    border-bottom: 5px solid #0EC281;
+    margin: 0 0 1.5rem;
+    font-size: 3rem;
+    padding: 2.5rem 0 0.3rem 0;
+    border-bottom: 0.3rem solid #0EC281;
 }
 
 .nav-logo {

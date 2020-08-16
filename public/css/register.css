@@ -2,8 +2,8 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding: 96px 0;
-    min-height: calc(100vh - 88px); 
+    padding: 6rem 0;
+    min-height: calc(100vh - 5.5rem); 
 }
 
 #register > div {
@@ -12,11 +12,11 @@
 }
 
 #register h2 {
-    margin: 0 0 64px;
+    margin: 0 0 4rem;
     text-align: center;
     color: #0EC281;
 }
 
 #register form {
-    width: 384px;
+    width: 24rem;
 }
