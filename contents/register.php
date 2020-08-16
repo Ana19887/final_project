@@ -2,12 +2,14 @@
     <div>
         <h2>Register</h2>
 
+        <!-- Validation message -->
         <?php include('validation.php'); ?>
 
+        <!--REGISTER FORM-->
         <form action="functions/php/func_register.php" method="POST">
             <div class="container">
                 <div class="item">
-                    <label for="name">Name</label>
+                    <label for="name"> First Name</label>
                     <input id="name" type="text" name="name" required>
                 </div>
 

@@ -6,7 +6,7 @@
 #presentation {
     display: flex;
     align-items: center;
-    height: calc(100vh - 5.5rem);
+    height: calc(100vh - 5.5rem); /* height of the logo 2.5 (header) + padding 3.0*/
 }
 
 #presentation div:first-child {
@@ -157,7 +157,7 @@
 #about .container-social {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 #about .container-social a:not(:last-child) {

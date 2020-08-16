@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 5.5rem); 
+    height: calc(100vh - 5.5rem); /* height of the logo 2.5 (header) + padding 3.0 (header)*/
 }
 
 #login > div {

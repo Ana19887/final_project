@@ -1,0 +1,7 @@
+<Files index.php>
+    Require all denied
+</Files>
+
+<FilesMatch "invoice.php|weekly_schedule.php">
+    Require all granted
+</FilesMatch>

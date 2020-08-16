@@ -1,28 +1,27 @@
 <?php 
     session_start();
-    
-    // connecting to the database
+       
     if ($_POST) {
         require('../../configs/server_connection.php');
 
-        // receive all input values from the form 
+        // Receive all input values from the form 
         $name     = $_POST['name'];
         $surname  = $_POST['surname'];
         $phone    = $_POST['phone'];
         $username = $_POST['username'];
         $pass     = $_POST['password'];
-        $level    = '1'; //setting level for the custumers=1
+        $level    = '1'; //set level for the custumers=1
 
-        //creating a password hash using the algorithm PASSWORD_BCRYPT beforesaving in the database
+        //Hash password using the algorithm PASSWORD_BCRYPT before saving in the database
         $pass = password_hash($pass, PASSWORD_BCRYPT);
 
-        //sql query
+        //Sql query
         $sql = "INSERT INTO `users` VALUES(NULL, '$name', '$surname', '$phone', '$username', '$pass', '$level')";
 
-        //executing sql query
+        //Execute query
         $query = mysqli_query($conn, $sql);
         
-       
+       //login user after the register and redirect to the user_area
         if ($query){
             $id = mysqli_insert_id($conn);        //return the last ID generate by the query (auto_increment)
 
@@ -33,10 +32,10 @@
                 'phone'   => $phone,
                 'level'   => $level
             );
-            //redirecting to the user_area
+          
             header('location:../../?pag=user_area');
 
-            //checking error in the register
+            //Validations in the register
         } else {
             if (mysqli_errno($conn) == 1062){ //1062 is a error when mysql find a duplicate row that is trying to insert
                 $_SESSION['validate'] = array(
@@ -44,7 +43,7 @@
                     'message' => 'User already registered'
                 );
                 
-                header('location:../../?pag=register');
+                header('location:../../?pag=login');
             } else {
                 $_SESSION['validate'] = array(
                     'type' => 'error', 

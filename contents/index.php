@@ -11,14 +11,19 @@
         <link href="public/css/forms.css" rel="stylesheet" type="text/css">
         <link href="public/css/register.css" rel="stylesheet" type="text/css">
         <link href="public/css/login.css" rel="stylesheet" type="text/css">
-        <link href="public/css/buttom.css" rel="stylesheet" type="text/css">
+        <link href="public/css/button.css" rel="stylesheet" type="text/css">
         <link href="public/css/validation.css" rel="stylesheet" type="text/css">
+        <link href="public/css/user_area.css" rel="stylesheet" type="text/css">
+        <link href="public/css/new_service.css" rel="stylesheet" type="text/css">
+        <link href="public/css/reset.css" rel="stylesheet" type="text/css">
 
+
+        <!-- Get the titles for the pages-->
         <title>GER'S Auto Service & Repair - <?php echo $page_title; ?></title>
     </head>
 
     <body>
-
+        <!--HEADER-->
         <header>
             <section id="header">
                 <nav>
@@ -29,14 +34,22 @@
                         <li><a href="?pag=main#about">About</a></li>
                         <li><a href="?pag=main#contact">Contact</a></li>
 
+                        <!--check if the user is admin(level 2) or customer(level 1)-->
                         <?php
                             if (isset($_SESSION['login'])) {
+                                if ( $_SESSION['login']['level'] == 2 ) {
                         ?>
                         <li><a class="logout" href="functions/php/func_logout.php">Logout</a></li>
-                        <li><a class="user" href="?pag=user_area"><?php echo $_SESSION['login']['name']['0'] ?></a></li>
+                        <li><a class="user" href="?pag=admin_area"><?php echo ucfirst( $_SESSION['login']['name']['0']) ?></a></li>
                         <?php
                             } else {
-                        ?>
+                        ?>    
+                        <li><a class="logout" href="functions/php/func_logout.php">Logout</a></li>
+                        <li><a class="user" href="?pag=user_area"><?php echo ucfirst($_SESSION['login']['name']['0']) ?></a></li>
+                            <?php  
+                            }
+                           } else { 
+                        ?>          
                         <li><a class="login" href="?pag=login">Login</a></li>
                         <li><a href="?pag=register">Register</a></li>
                         <?php
@@ -48,14 +61,14 @@
         </header>
 
 
-        
+        <!-- include the content of the pages passed via GET -->
         <main>
-            <!-- include the page passed via GET -->
             <?php
                 include("$pag.php");
             ?>
         </main>
 
+        <!--FOOTER-->
         <footer>
             <section id="footer">
                 <div>
@@ -65,5 +78,24 @@
             </section>
         </footer>
 
-        </body>
-</html>  
+        
+        <script src="public/js/libraries/jquery-3.5.1.min.js"></script>
+
+        <!-- AIR DATEPICKER DEPENDENCES-->
+        <link href="public/js/plugins/air_datepicker/datepicker.css" rel="stylesheet" type="text/css">
+        <script src="public/js/plugins/air_datepicker/datepicker.js"></script>
+        <!-- English language -->
+        <script src="public/js/plugins/air_datepicker/datepicker.en.js"></script>
+
+        <!-- JQUERY MASK PLUGIN DEPENDENCES-->
+        <script src="public/js/plugins/jquery_mask_plugin/jquery.mask.min.js"></script>
+        
+        <!-- FUNCTIONS -->
+        <!-- Air Datepicker -->
+        <script src="functions/js/func_air_datepicker.js"></script>
+
+        <!-- Jquery Mask Plugin -->
+        <script src="functions/js/func_jquery_mask_plugin.js"></script>
+
+    </body>
+</html>

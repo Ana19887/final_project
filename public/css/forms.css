@@ -71,8 +71,21 @@ select:focus {
     outline: none;
 }
 
+input#date {
+    background: url('../images/calendar.svg') no-repeat;
+    background-color: #202020;
+    background-position: calc(100% - 0.8rem) center;
+}
+select {
+    background: url('../images/select_arrow.svg') no-repeat;
+    background-color: #202020;
+    background-position: calc(100% - 0.8rem) center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 
 textarea {
-    padding: 1rem 1rem;
+    padding: 0.6rem 1rem;
     resize: none;
 }

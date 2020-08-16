@@ -1,0 +1,11 @@
+RewriteEngine On
+
+<Files *.php>
+    Require all denied
+</Files>
+
+<Files index.php>
+    Require all granted
+</Files>
+
+Options All -Indexes

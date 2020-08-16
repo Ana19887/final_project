@@ -1,3 +1,4 @@
+<!-- VALIDATION MESSAGE-->
 <?php
     if (isset($_SESSION['validate'])) {
 ?>
