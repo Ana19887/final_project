@@ -1,3 +1,4 @@
+<!-- REGISTER A VEHICLE -->
 <section id="new_service">
     <div>
         <h2>
@@ -7,15 +8,15 @@
 
         <?php include('validation.php'); ?>
 
-        <!-- data is sent to be process in the func_new_vehicle-->
+        
         <form action="functions/php/func_new_vehicle.php" method="POST">
             <div class="item label">
                 <label>Type</label>
             </div>
             
 
-            <!-- load informations from the database for types, brands, models and enginee-->
-
+            <!-- loads informations from the database for types, brands, models and enginee-->
+            <!--CHOOSE VEHICLE TYPE-->
             <div class="container radios">
                 <?php
                     $sql   = "SELECT * FROM `vehicle_type`";
@@ -35,7 +36,7 @@
                 ?>
             </div>
             
-           
+           <!--CHOOSE VEHICLE BRAND-->
             <div class="item">
                 <label for="brand">Brand</label>
                 <select id="brand" required>
@@ -56,6 +57,7 @@
                 </select>
             </div>
 
+             <!--CHOOSE VEHICLE MODEL-->
             <div class="item">
                 <label for="model">Model</label>
                 <select id="model" name="model" required>
@@ -77,6 +79,7 @@
                 </select>
             </div>
 
+             <!--CHOOSE VEHICLE ENGINE-->
             <div class="item label">
                 <label>Engine Type</label>
             </div>
@@ -101,6 +104,7 @@
 
             </div>
 
+             <!--INSERT VEHICLE LICENSE-->
             <div class="item">
                 <label for="license">License details</label>
                 <input id="license" type="text" name="license" required>

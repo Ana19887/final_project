@@ -2,7 +2,7 @@
     <div>
         <h2>Login</h2>
 
-        <!-- Validation message -->
+        
         <?php include('validation.php'); ?>
 
          <!--LOGIN FORM-->

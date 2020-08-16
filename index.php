@@ -5,7 +5,7 @@
     //connect with db
     require('configs/server_connection.php');
 
-    /*check if something is passed via Get in the URL
+    /*check if something is passed through URL
      Pages allowed to be loaded from URL */ 
     if (isset($_GET)) {
         if ( isset($_GET['pag']) ) {
@@ -19,15 +19,17 @@
 
             /*RULES*/
 
-            /*search the value passed in the URL in the array allowed_page, 
-             so give a specific name for the page,
-             if page is not in the array, redirect to the main page*/
+            /*search the page in the array allowed_page,
+             if page is not allowed, redirect to the main page 
+             Give a specific name for this page*/
+             
+            //Homepage
             if ( in_array($pag, $allowed_pages )) {
                 if ( $pag == 'main' ) {
                     $page_title = 'Welcome';
                 }
                 
-                /*if the user is not login redirect to main page*/
+                //Login page
                 elseif ( $pag == 'login' ) {
                     if (!isset($_SESSION['login'])) {
                         $page_title = 'Login';
@@ -35,7 +37,8 @@
                         header('location:./?pag=main');
                     }
                 }
-                /* Customer  Area */
+
+                // Customer main page
                 elseif ( $pag == 'user_area' ) {
                     if (isset($_SESSION['login'])) {
                         if ( $_SESSION['login']['level'] == 1 ) {
@@ -49,6 +52,7 @@
                     }
                 }
 
+                // Booking Service page
                 elseif ( $pag == 'new_service' ) {
                     if (isset($_SESSION['login'])) {
                         if ( $_SESSION['login']['level'] == 1 ){
@@ -60,6 +64,8 @@
                     header('location:./?pag=main');
                     }
                 }
+
+                //Register a Vehicle page
                 elseif ( $pag == 'new_vehicle' ) {
                     if (isset($_SESSION['login'])) {
                         if ( $_SESSION['login']['level'] == 1 ){
@@ -72,7 +78,7 @@
                         }    
                     }  
                 
-                /*if the user is not loged in redirect to main page*/
+                //Register Page
                 elseif ( $pag == 'register' ) {
                     if (!isset($_SESSION['login'])) {
                         $page_title = 'Register';
@@ -81,7 +87,7 @@
                     }
                 }
 
-                /* Administrator Area */
+               //Administrator main page
                 elseif ( $pag == 'admin_area' ) {
                     if (isset($_SESSION['login'])) {
                         if ( $_SESSION['login']['level'] == 2 ) {
@@ -94,6 +100,7 @@
                     }
                 }
 
+                //Manage booking page 
                 elseif ( $pag == 'manage_bookings' ) {
                     if (isset($_SESSION['login'])) {
                         if ( $_SESSION['login']['level'] == 2 ) {
@@ -107,7 +114,7 @@
                 }
 
 
-                /* coping the code */
+                /* including the code */
                 include("contents/index.php");
             } else {
                 header('location:./?pag=main');

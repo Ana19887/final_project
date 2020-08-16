@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap');
 
 body {
     background: #292929;
@@ -19,7 +18,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 0;
+    z-index: 0; /*stack order of the footer - in front*/
 }
 
 section {
@@ -56,12 +55,14 @@ section#contact {
     padding: 10rem 1rem;
 }
 
-section#services > div:first-child,
+/*titles*/
+section#services > div:first-child, 
 section#about > div:first-child,
 section#contact > div:first-child {
     padding-right: 2rem;
     width: 25%;
 }
+
 
 section#services > div:last-child,
 section#about > div:last-child,
@@ -69,6 +70,7 @@ section#contact > div:last-child {
     width: 75%;
 }
 
+/*line to separate*/
 section#services::before,
 section#about::before,
 section#contact::before {

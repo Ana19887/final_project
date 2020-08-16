@@ -1,3 +1,4 @@
+<!--Select vehicles and bookings from de user -->
 <?php
     $userId = $_SESSION['login']['id'];
 
@@ -10,26 +11,27 @@
     $numBooking = mysqli_num_rows($query);
 ?>
 
-
+<!-- shows the Customer's name-->
 <section id="user_area">
     <div>
         <h2>
-            <!-- shows the name of the customer-->
+            
             <span>Welcome,</span>
             <?php echo ucfirst($_SESSION['login']['name']); ?>
         </h2>
 
         <?php include('validation.php'); ?>
 
-        <!-- if there are vehicles registered, show the option to register a new vehicle and book a service-->
+       
         <?php
             if ( $numVehicle > 0 ) {
         ?>
-
+            
             <?php
                 if ( $numBooking > 0 ) {
             ?>
-            <!-- show the completed bookings-->
+
+             <!-- SECTION LAST COMPLETED BOOKINGS -->
             <div class="wrapper last">
                 <span>Last completed services</span>
 
@@ -41,6 +43,9 @@
 
                         INNER JOIN `service_type`
                         ON `bookings`.`bkg_SERVICE_TYPE_srv_id` = `service_type`.`srv_id`
+
+                        INNER JOIN `vehicles`
+                        ON `bookings`.`bkg_VEHICLES_veh_id` = `vehicles`.`veh_id`
                         
                         WHERE `bkg_USERS_usr_id` = '$userId' AND `bkg_STATUS_sta_id` = 5
                         ORDER BY `bkg_date` DESC";
@@ -75,9 +80,9 @@
                 </div>
             </div>
 
-             <!-- shows in services bookings-->
+             <!-- SECTION MY BOOKINGS -->
             <div class="wrapper scheduled">
-                <span>In progress services</span>
+                <span>My bookings</span>
 
                 <div class="container">
                     <?php

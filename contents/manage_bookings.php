@@ -21,19 +21,21 @@
     $statusId = $ln1['bkg_STATUS_sta_id'];
 ?>
 
+<!--display user's name -->
 <section id="new_service">
     <div>
-        <h2>
-            <!--show the name of the user-->
-            <span>Service for</span>
+        <h2>         
+            <span>Customer:</span>
             <?php echo $ln1['usr_name']; ?>
         </h2>
 
+        <!-- Include validation-->
         <?php include('validation.php'); ?>
 
+        <!-- MANAGE BOOKINGS-->
         <form action="functions/php/func_update_booking.php" method="POST">
 
-        <!-- if the status = waiting, admin can allocate a mechanic available and update the status-->
+        <!-- if the status = 1(booked), admin can allocate a mechanic available and update the status-->
             <?php
                 if ( $ln1['bkg_STATUS_sta_id'] == 1 ) {
             ?>
@@ -43,7 +45,7 @@
                     <option value="">Choose</option>
                     
                     <?php
-                     /*retrieve all booking for the date and time of this booking */
+                     /*retrieve all booking for this date and time with a mechanic allocated */
                         $sql = "SELECT *
                         FROM `bookings`
                         WHERE `bkg_date` = '$dateTime'  
@@ -52,8 +54,8 @@
                         $query = mysqli_query($conn, $sql);
 
                         if ( mysqli_num_rows($query) > 0 ) {
-                            $mechanicBlock = array(); // save mechanics that are not available in an array
-
+                            $mechanicBlock = array(); 
+                            // save mechanics that are not available in an array
                             while ( $ln = mysqli_fetch_assoc($query) ) {
                                 $mechanicBlock[] = $ln['bkg_MECHANICS_mch_id'];
                             }
@@ -87,7 +89,7 @@
                 }
             ?>
 
-         <!-- if the status = completed, admin can add extra parts used in the service and update the status-->
+         <!-- if the status=4(finished), admin can add extra parts used in the service and update the status-->
             <?php
                 if ( $ln1['bkg_STATUS_sta_id'] == 4 ) {
             ?>
@@ -181,7 +183,7 @@
             <?php
                 }
             ?>
-             <!-- Update status --show it for all status-->
+             <!-- Update status -- display it for all cases-->
             <div class="item">
                 <label for="status">Status</label>
                 <select id="status" name="status" required>
