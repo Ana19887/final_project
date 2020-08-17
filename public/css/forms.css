@@ -52,6 +52,7 @@ select {
 }
 
 input[type=text],
+input[type=email],
 input[type=password],
 input[type=tel],
 input[type=date],
@@ -60,6 +61,7 @@ select {
 }
 
 input[type=text]:focus,
+input[type=email]:focus,
 input[type=password]:focus,
 input[type=tel]:focus,
 input[type=date]:focus,
@@ -80,6 +82,8 @@ select {
     background-color: #202020;
     background-position: calc(100% - 0.8rem) center;
     appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 textarea {
