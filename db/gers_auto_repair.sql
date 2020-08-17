@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2020 at 09:18 PM
+-- Generation Time: Aug 17, 2020 at 10:20 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -231,7 +231,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`usr_id`, `usr_name`, `usr_surname`, `usr_phone`, `usr_username`, `usr_password`, `usr_level`) VALUES
-(1, 'Ger', 'Jones', '(89) 037-9876', 'admin', '$2y$10$JvT6Y0Y/8Ze7SEuvmKpAL.XaXUfzYqPmwDAOSwi3gQQcQX3g6dwSO', '2');
+(1, 'Ger', 'Jones', '(89) 037-9876', 'admin', '$2y$10$JvT6Y0Y/8Ze7SEuvmKpAL.XaXUfzYqPmwDAOSwi3gQQcQX3g6dwSO', '2'),
+(2, 'Ana', 'Oliveira', '(83) 037-1234', 'ana', '$2y$10$cAy3.wA4m10gZUFkBXCkt.E9jWgGauj/YYTNgUx0FS00I.OEAQ60y', '1');
 
 -- --------------------------------------------------------
 
@@ -503,7 +504,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `usr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `vehicles`
